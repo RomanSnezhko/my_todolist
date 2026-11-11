@@ -1,4 +1,4 @@
-import { TaskTpe } from './App.tsx';
+import type { TaskType } from './App.tsx';
 
 type TaskProps = {
     task: TaskType
@@ -6,6 +6,6 @@ type TaskProps = {
 
 export function Task(props: TaskProps) {
     return <li>
-        <input type="checkbox" checked={props.task.isdone} /> <span>{props.task.title}</span>
+        <input type="checkbox" checked={props.task.isDone} /> <span>{props.task.title}</span>
     </li>
 }
