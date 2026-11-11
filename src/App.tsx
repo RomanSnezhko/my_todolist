@@ -1,41 +1,40 @@
 import './App.css'
-import { TodolistItem } from './TodolistItem'
-import type { Task } from './types'
+import { Todolist } from './Todolist'
 
-const title1 = 'Title 1'
-const title2 = 'Title 2'
-const title3 = 'Title 3'
-const title4 = 'Title 4'
-
-const task1: Task[] = [
-  { id: 1, title: 'HTML&CSS', isDone: true },
-  { id: 2, title: 'JS', isDone: false },
-  { id: 3, title: 'React', isDone: false },
+const todolists = [
+  {
+    id: 1, title: "Что купить", tasks: [
+      { id: 1, title: "Молоко", isDone: true },
+      { id: 2, title: "Coca Cola", isDone: true },
+      { id: 3, title: "Хлеб", isDone: false }
+    ]
+  },
+  {
+    id: 1, title: "Что петь", tasks: [
+      { id: 1, title: "We are the champions", isDone: true },
+      { id: 2, title: "Очи чёрные", isDone: false },
+      { id: 3, title: "Rap God", isDone: true }
+    ]
+  },
+  {
+    id: 1, title: "Что учить", tasks: [
+      { id: 1, title: "JS", isDone: true },
+      { id: 2, title: "React", isDone: true },
+    ]
+  },
 ]
 
-const task2: Task[] = [
-  { id: 1, title: 'TS', isDone: true },
-  { id: 2, title: 'Angular', isDone: false },
-  { id: 3, title: 'Node.js', isDone: true },
-]
+export type TodolistType = typeof todolists[number]
+export type TaskType = typeof todolists[number]['tasks'][number]
 
-const task3: Task[] = [
-  { id: 1, title: 'Talwind', isDone: false },
-  { id: 2, title: 'Webstorm', isDone: false },
-  { id: 3, title: 'VS', isDone: true },
-]
 
-const task4: Task[] = []
 
 function App() {
-  return (
-    <div className="app">
-      <TodolistItem title={title1} tasks={task1} />
-      <TodolistItem title={title2} tasks={task2} />
-      <TodolistItem title={title3} tasks={task3} />
-      <TodolistItem title={title4} tasks={task4} />
-    </div>
-  )
+  return <>
+    {
+      todolists.map(t => <div key={t.id}> <Todolist todolist={t.tasks[0].} /></div>)
+    }
+  </>
 }
 
 export default App
