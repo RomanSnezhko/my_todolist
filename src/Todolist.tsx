@@ -12,7 +12,7 @@ export function Todolist(props: TodolistProps) {
     <TodolistHeader headerTitle={props.todolist.title} tasksCount={props.todolist.tasks.length} />
     <ul>
       {
-        props.todolist.tasks.map(task => <Task key={task.id} task={task} />)
+        props.todolist.tasks.map(t => <Task key={t.id} task={t} />)
       }
     </ul>
     <TodolistFilter />

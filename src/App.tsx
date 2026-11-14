@@ -27,8 +27,6 @@ const todolists = [
 export type TodolistType = typeof todolists[number]
 export type TaskType = typeof todolists[number]['tasks'][number]
 
-
-
 function App() {
   return <>
     {
